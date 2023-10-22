@@ -14,19 +14,25 @@ console.log(heading); // -----  Prints an Object on the console
  * <div id="parent">
  *   <div id="child">
  *      <h1>I'm h1 Tag</h1>
+ *      <h2>I'm h2 Tag</h2>
+ *   </div>
+ *   <div id="child">
+ *      <h1>I'm h1 Tag</h1>
+ *      <h2>I'm h2 Tag</h2>
  *   </div>
  * </div>
  */
 
-const parent = React.createElement(
-  "div",
-  { id: "parent" },
-  React.createElement(
-    "div",
-    { id: "child" },
-    React.createElement("h1", {}, "I'm h1 Tag")
-  )
-);
+const parent = React.createElement("div", { id: "parent" }, [
+  React.createElement("div", { id: "child1" }, [
+    React.createElement("h1", {}, "I'm h1 Tag"),
+    React.createElement("h2", {}, "I'm h2 Tag"),
+  ]),
+  React.createElement("div", { id: "child2" }, [
+    React.createElement("h1", {}, "I'm h1 Tag"),
+    React.createElement("h2", {}, "I'm h2 Tag"),
+  ]),
+]);
 
 console.log(parent); // ----> ReactElement(Object)  => HTML(Browser Understands)
 
@@ -34,3 +40,9 @@ console.log(parent); // ----> ReactElement(Object)  => HTML(Browser Understands)
 const root = ReactDOM.createRoot(document.getElementById("root"));
 //Render the React element into the React root
 root.render(parent);
+
+// Why React is a Library ?
+/*
+    Because we can use React in any part of the HTML page.  Even in the middle of the page, side of the page, etc.
+
+*/
