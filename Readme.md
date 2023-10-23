@@ -43,3 +43,11 @@
   - Minification
   - Bundling
   - Compression
+  - Code Splitting
+  - Consistent Hashing
+  - Differntial Bundling - To support older browsers
+  - Diagnostic Messages
+  - Error Suggestions
+  - HTTPs
+  - Tree Shaking - Remove unused code
+  - Differnet Dev and Prod Builds
