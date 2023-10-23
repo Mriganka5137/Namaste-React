@@ -23,3 +23,23 @@
 
   - A transitive dependency is a dependency of a dependency.
   - For example, if package A depends on package B, and package B depends on package C, then package C is a transitive dependency of package A.
+
+- npx
+
+  - npx executes a command from a temporary directory. It is used to execute packages without installing them globally.
+
+- Normal Browser Scripts cannot use ES6 modules
+
+  - ES6 modules are not supported in browsers yet. So, we need to use a bundler like webpack to bundle the modules into a single file that can be used in the browser.
+  - or implicitly mention type="module" in script tag
+
+- Parcel
+  - Dev Build
+  - Local Server
+  - Hot Module Replacement
+  - File Watching Algorithm - written in C++
+  - Faster Builds because of caching
+  - Image Optimization
+  - Minification
+  - Bundling
+  - Compression
