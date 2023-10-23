@@ -1,0 +1,15 @@
+{
+  "name": "02-igniting-our-app",
+  "version": "1.0.0",
+  "description": "This is Namaste React by Akshay Saini",
+  "main": "App.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "Mriganka",
+  "license": "ISC",
+  "devDependencies": {
+    "parcel": "^2.10.0"
+  }
+}
+

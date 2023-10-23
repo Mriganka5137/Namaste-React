@@ -23,6 +23,8 @@ console.log(heading); // -----  Prints an Object on the console
  * </div>
  */
 
+// createElement(tagName, props, children)
+// To Make multiple children, we need to pass an array of children
 const parent = React.createElement("div", { id: "parent" }, [
   React.createElement("div", { id: "child1" }, [
     React.createElement("h1", {}, "I'm h1 Tag"),
