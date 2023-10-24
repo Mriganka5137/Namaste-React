@@ -9,7 +9,8 @@
   "license": "ISC",
   "devDependencies": {
     "parcel": "^2.10.0",
-    "process": "^0.11.10"
+    "process": "^0.11.10",
+    "bun-types": "latest"
   },
   "dependencies": {
     "react": "^18.2.0",
@@ -17,5 +18,10 @@
   },
   "browserslist": [
     "last 2 versions"
-  ]
+  ],
+  "module": "index.ts",
+  "type": "module",
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  }
 }
