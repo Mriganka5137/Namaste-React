@@ -58,3 +58,8 @@
   - JSX is not HTML in JS
   - It is HTML like or XML like
   - Attributes are camelCase
+
+- React Component
+
+  - Class Based Component
+  - Functional Component
