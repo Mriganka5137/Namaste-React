@@ -34,6 +34,7 @@
   - or implicitly mention type="module" in script tag
 
 - Parcel
+
   - Dev Build
   - Local Server
   - Hot Module Replacement
@@ -51,3 +52,9 @@
   - HTTPs
   - Tree Shaking - Remove unused code
   - Differnet Dev and Prod Builds
+
+- JSX
+
+  - JSX is not HTML in JS
+  - It is HTML like or XML like
+  - Attributes are camelCase

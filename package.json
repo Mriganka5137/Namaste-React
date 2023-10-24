@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "description": "This is Namaste React by Akshay Saini",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "start": "parcel index.html"
   },
   "author": "Mriganka",
   "license": "ISC",
@@ -19,7 +20,6 @@
   "browserslist": [
     "last 2 versions"
   ],
-  "module": "index.ts",
   "type": "module",
   "peerDependencies": {
     "typescript": "^5.0.0"
