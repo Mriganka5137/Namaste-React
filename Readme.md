@@ -63,3 +63,15 @@
 
   - Class Based Component
   - Functional Component
+
+- UseState
+
+  - Whenever the state variable changes in React component, the component re-renders.
+  - useState returns an array with two elements. The first element is the state variable and the second element is a function to update the state variable.
+
+- Reconcialiation Algorithm (React Fiber)
+
+  - React compares the virtual DOM and the real DOM and only updates the real DOM if there is a difference.
+  - Virtual DOM is a copy or representation of the real DOM in memory.
+  - React uses a diffing algorithm to find the difference between the virtual DOM and the real DOM.
+  - Diff Algorithm finds the minimum number of steps to update the real DOM.

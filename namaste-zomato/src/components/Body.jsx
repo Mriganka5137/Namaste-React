@@ -1,28 +1,40 @@
 import RestaurantCard from "./RestaurantCard";
+import resList from "../utils/mockdata";
+import { useState } from "react";
 
 const Body = () => {
   // Optional Chaining
+  const [restaurants, setRestaurant] = useState(resList);
+
+  const filteredRestaurants = restaurants.filter(
+    (res) => res.data.avgRating > 4
+  );
+
+  const handleFilter = () => {
+    setRestaurant(filteredRestaurants);
+  };
 
   return (
     <div className="flex flex-col justify-start w-full px-10 py-5">
-      <div className="">
+      <div className="flex items-center justify-center gap-3 px-10">
         <input
           type="search"
           name="search"
           id="search"
-          className="w-full px-5 py-2 mt-5 rounded-md bg-slate-200"
+          className="flex-1 w-full px-5 py-2 rounded-md bg-slate-200"
           placeholder="Search"
         />
+        <button
+          className="px-4 py-2 text-black uppercase rounded-lg bg-slate-200"
+          onClick={handleFilter}
+        >
+          Filter
+        </button>
       </div>
-      <div className="flex gap-10 max-sm:flex-col max-sm:items-center">
-        <RestaurantCard
-          name="The Pork Company"
-          url="https://b.zmtcdn.com/data/pictures/chains/9/19168749/f4c3930c76078f50b9f96ce68d866d30_o2_featured_v2.jpg?output-format=webp"
-        />
-        <RestaurantCard
-          name="Shanghai Wok"
-          url="https://b.zmtcdn.com/data/pictures/1/2100071/7841939cd4dd2fa641c4ad1dfbb50f0c_o2_featured_v2.jpg?output-format=webp"
-        />
+      <div className="flex flex-wrap items-center justify-center gap-10 max-sm:flex-col max-sm:items-center">
+        {restaurants.map((restaurant) => (
+          <RestaurantCard resData={restaurant} key={restaurant.id} />
+        ))}
       </div>
     </div>
   );
