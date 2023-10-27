@@ -75,3 +75,8 @@
   - Virtual DOM is a copy or representation of the real DOM in memory.
   - React uses a diffing algorithm to find the difference between the virtual DOM and the real DOM.
   - Diff Algorithm finds the minimum number of steps to update the real DOM.
+
+- useEffect
+
+  - useEffect is a hook that allows us to perform side effects in a functional component.
+  - The callback function inside the useEffect hook is called after the component is rendered. It is called after every render.

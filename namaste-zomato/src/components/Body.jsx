@@ -1,17 +1,37 @@
 import RestaurantCard from "./RestaurantCard";
-import resList from "../utils/mockdata";
-import { useState } from "react";
+// import resList from "../utils/mockdata";
+import { useEffect, useState } from "react";
+import Shimmer from "./Shimmer";
 
 const Body = () => {
   // Optional Chaining
-  const [restaurants, setRestaurant] = useState(resList);
+  const [restaurants, setRestaurants] = useState([]);
 
-  const filteredRestaurants = restaurants.filter(
-    (res) => res.data.avgRating > 4
-  );
+  // const filteredRestaurants = restaurants.filter(
+  //   (res) => res.data.avgRating > 4
+  // );
+
+  useEffect(() => {
+    fetchRestaurant();
+  }, []);
+
+  const fetchRestaurant = async () => {
+    const res = await fetch(
+      "https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9351929&lng=77.62448069999999&page_type=DESKTOP_WEB_LISTING"
+    );
+
+    const data = await res.json();
+
+    const restaurantsData =
+      data?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle
+        ?.restaurants;
+    console.log(restaurantsData[0].info);
+
+    setRestaurants(restaurantsData);
+  };
 
   const handleFilter = () => {
-    setRestaurant(filteredRestaurants);
+    setRestaurants();
   };
 
   return (
@@ -31,11 +51,24 @@ const Body = () => {
           Filter
         </button>
       </div>
-      <div className="flex flex-wrap items-center justify-center gap-10 max-sm:flex-col max-sm:items-center">
-        {restaurants.map((restaurant) => (
-          <RestaurantCard resData={restaurant} key={restaurant.id} />
-        ))}
-      </div>
+
+      {restaurants.length === 0 ? (
+        <div className="flex flex-wrap items-center justify-center gap-10 max-sm:flex-col max-sm:items-center">
+          <Shimmer />
+          <Shimmer />
+          <Shimmer />
+          <Shimmer />
+          <Shimmer />
+          <Shimmer />
+          <Shimmer />
+        </div>
+      ) : (
+        <div className="flex flex-wrap items-center justify-center gap-10 max-sm:flex-col max-sm:items-center">
+          {restaurants?.map((restaurant) => (
+            <RestaurantCard resData={restaurant} key={restaurant.info.name} />
+          ))}
+        </div>
+      )}
     </div>
   );
 };
