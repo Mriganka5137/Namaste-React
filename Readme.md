@@ -28,7 +28,7 @@
 
 - npx executes a command from a temporary directory. It is used to execute packages without installing them globally.
 
-### Normal Browser Scripts cannot use ES6 modules
+- Normal Browser Scripts cannot use ES6 modules
 
 - ES6 modules are not supported in browsers yet. So, we need to use a bundler like webpack to bundle the modules into a single file that can be used in the browser.
 - or implicitly mention type="module" in script tag
@@ -85,3 +85,24 @@
 - if no dependency array is present, the callback function is called after every render.
 - If the dependency array is empty, the callback function is called only once after the initial render.
 - If the dependency array is not empty, the callback function is called after the initial render and after every render where the value of the dependency array changes.
+
+### Routing
+
+- 1. Client Side Routing
+- 2. Server Side Routing
+
+### Routing using React Router Dom
+
+1. createBrowserRouter
+
+   - create the rouitng layout
+
+2. RouterProvider
+
+   - provide the routing layout to the app
+
+3. Use Link to navigate to different routes
+
+4. use <Outlet/> to replace the changing components inside the children
+
+5. Dynamic Routing

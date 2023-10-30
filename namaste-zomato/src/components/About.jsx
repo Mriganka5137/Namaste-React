@@ -1,10 +1,6 @@
-import React from "react";
-import Header from "./Header";
-
 const About = () => {
   return (
-    <div>
-      <Header />
+    <div className="pt-36">
       <h1>About</h1>
     </div>
   );

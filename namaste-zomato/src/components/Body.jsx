@@ -9,10 +9,7 @@ const Body = () => {
   const [filteredRestaurant, setFilteredRestaurant] = useState([]);
   const [searchText, setSearchText] = useState("");
 
-  console.log("body render");
-  // const filteredRestaurants = filteredRestaurants.filter(
-  //   (res) => res?.info?.avgRating > 4
-  // );
+  const fourStar = restaurants.filter((res) => res?.info?.avgRating > 4);
 
   useEffect(() => {
     // console.log("Inside effect");
@@ -22,22 +19,26 @@ const Body = () => {
   // Fetch Restaurant function
   const fetchRestaurant = async () => {
     const res = await fetch(
-      "https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9351929&lng=77.62448069999999&page_type=DESKTOP_WEB_LISTING"
+      "https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9715987&lng=77.5945627&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
     );
+    // const res = await fetch(
+    //   "https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9351929&lng=77.62448069999999&page_type=DESKTOP_WEB_LISTING"
+    // );
 
     const data = await res.json();
 
     // console.log(data);
     let restaurantsData =
       data?.data?.cards[3].card?.card?.gridElements?.infoWithStyle?.restaurants;
-    // console.log(restaurantsData[0]?.info);
     // console.log(restaurantsData);
 
-    if (!restaurantsData) {
+    if (restaurantsData === undefined) {
       restaurantsData =
         data?.data?.cards[2].card?.card?.gridElements?.infoWithStyle
           ?.restaurants;
     }
+    // console.log(restaurantsData);
+
     setRestaurants(restaurantsData);
     setFilteredRestaurant(restaurantsData);
   };
@@ -45,9 +46,10 @@ const Body = () => {
   // const handleFilter = () => {
   //   setRestaurants(filteredRestaurants);
   // };
+  // console.log(filteredRestaurant);
 
   return (
-    <div className="flex flex-col justify-start max-w-[1440px] px-10 py-5 max-sm:px-2 mx-auto">
+    <div className="flex flex-col justify-start max-w-[1440px] px-10 py-5 max-sm:px-2 mx-auto pt-36">
       <div className="flex flex-wrap items-center justify-center gap-3 px-10 max-sm:flex-col max-sm:px-2">
         <input
           type="search"
@@ -75,7 +77,9 @@ const Body = () => {
         </button>
         <button
           className="px-4 py-2 text-black uppercase rounded-lg bg-slate-200"
-          onClick={() => {}}
+          onClick={() => {
+            setFilteredRestaurant(fourStar);
+          }}
         >
           Filter
         </button>
@@ -94,7 +98,10 @@ const Body = () => {
       ) : (
         <div className="flex flex-wrap items-center justify-center gap-10 max-sm:flex-col max-sm:items-center">
           {filteredRestaurant?.map((restaurant) => (
-            <RestaurantCard resData={restaurant} key={restaurant.info.name} />
+            <RestaurantCard
+              resData={restaurant?.info}
+              key={restaurant.info.name}
+            />
           ))}
         </div>
       )}

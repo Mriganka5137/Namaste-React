@@ -3,8 +3,7 @@ import Header from "./Header";
 
 const Contact = () => {
   return (
-    <div>
-      <Header />
+    <div className=" pt-36">
       <h1>Contact</h1>
     </div>
   );
