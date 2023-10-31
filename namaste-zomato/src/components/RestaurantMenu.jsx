@@ -51,7 +51,7 @@ const RestaurantMenu = () => {
       resInfo?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]?.card
         ?.card;
   }
-  console.log(data);
+  // console.log(data);
   return (
     <div className="px-10 py-5 pt-36 max-w-[1440px] mx-auto max-sm:p-3">
       <div>

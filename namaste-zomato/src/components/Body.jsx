@@ -50,39 +50,41 @@ const Body = () => {
 
   return (
     <div className="flex flex-col justify-start max-w-[1440px] px-10 py-5 max-sm:px-2 mx-auto pt-36">
-      <div className="flex flex-wrap items-center justify-center gap-3 px-10 max-sm:flex-col max-sm:px-2">
+      <div className="flex flex-wrap items-center justify-around gap-3 px-10 max-sm:px-2">
         <input
           type="search"
           name="search"
           id="search"
-          className="flex-1 w-full px-5 py-2 rounded-lg bg-slate-200"
-          placeholder="Search"
+          className="flex-1 px-5 py-2 text-sm border rounded-lg bg-slate-50"
+          placeholder="Search restaurants..."
           value={searchText}
           onChange={(e) => {
             setSearchText(e.target.value);
           }}
         />
-        <button
-          className="px-4 py-2 text-black uppercase rounded-lg bg-slate-200"
-          onClick={() => {
-            const searchRestaurants = restaurants.filter((res) =>
-              res.info.name.toLowerCase().includes(searchText.toLowerCase())
-            );
+        <div className="flex gap-2 text-sm">
+          <button
+            className="px-4 py-2 text-gray-400 uppercase border rounded-lg bg-slate-50"
+            onClick={() => {
+              const searchRestaurants = restaurants.filter((res) =>
+                res.info.name.toLowerCase().includes(searchText.toLowerCase())
+              );
 
-            // setRestaurants(searchRestaurants);
-            setFilteredRestaurant(searchRestaurants);
-          }}
-        >
-          Search
-        </button>
-        <button
-          className="px-4 py-2 text-black uppercase rounded-lg bg-slate-200"
-          onClick={() => {
-            setFilteredRestaurant(fourStar);
-          }}
-        >
-          Filter
-        </button>
+              // setRestaurants(searchRestaurants);
+              setFilteredRestaurant(searchRestaurants);
+            }}
+          >
+            Search
+          </button>
+          <button
+            className="px-4 py-2 text-gray-400 uppercase border rounded-lg bg-slate-50"
+            onClick={() => {
+              setFilteredRestaurant(fourStar);
+            }}
+          >
+            Filter
+          </button>
+        </div>
       </div>
 
       {restaurants?.length === 0 ? (

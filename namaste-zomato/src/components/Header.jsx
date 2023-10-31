@@ -6,13 +6,13 @@ const Header = () => {
   const [btnName, setBtnName] = useState("Login");
 
   return (
-    <div className="fixed z-10 flex justify-between w-full px-10 py-8 bg-white shadow-lg text-slate-500 max-sm:justify-center">
+    <div className="fixed z-10 flex justify-between w-full px-10 py-8 bg-white shadow-md text-slate-500 max-sm:justify-center">
       <NavLink to="/" className="flex items-center gap-2 ">
         <img src={logo} alt="logo" width={45} />
-        <p className="text-xl font-bold text-slate-800">Namaste Zomato</p>
+        <p className="text-xl font-bold text-slate-800">Namaste Swiggy</p>
       </NavLink>
 
-      <ul className="flex items-center gap-10 uppercase max-sm:hidden">
+      <ul className="flex items-center gap-10 text-sm font-semibold text-gray-400 uppercase max-sm:hidden">
         <li>
           <NavLink to="/about">About us</NavLink>
         </li>

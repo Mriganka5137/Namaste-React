@@ -10,7 +10,7 @@ const ItemCard = ({ item }) => {
     category,
   } = item?.card?.info;
   return (
-    <div className="flex items-center justify-between gap-3 p-5 border border-gray-100 rounded-lg shadow-sm max-sm:flex-col-reverse max-sm:p-2">
+    <div className="flex items-center justify-between gap-3 p-5 border border-gray-100 rounded-lg shadow-sm max-sm:flex-col-reverse max-sm:p-2 hover:shadow-lg">
       <div className=" max-w-1/2">
         <p className="font-bold text-gray-500 text-md">{name}</p>
         <p className="font-medium text-[14px] text-gray-700">₹{price / 100}</p>
