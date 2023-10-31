@@ -106,3 +106,11 @@
 4. use <Outlet/> to replace the changing components inside the children
 
 5. Dynamic Routing
+
+### Class Based Components
+
+1.  Lifecycle of a Class Based Component
+
+    - Constructor
+    - Render
+    - ComponentDidMount --- Make API Calls
