@@ -19,14 +19,30 @@ class About extends React.Component {
         <h1 className="mb-3 text-2xl font-semibold">About us</h1>
         <hr />
         <UserCard />
-        <UserCardClass
-          name="Mriganka Mousum Gogoi - class"
-          location="Khumtai, Golghat"
-        />
+        <UserCardClass name="First" location="Khumtai, Golghat" />
+        <UserCardClass name="Second" location="Khumtai, Golghat" />
       </div>
     );
   }
 }
+
+/**
+  -  Parent Constructor
+  -  Parent Render
+    
+    - First Constructor
+    - First Render
+
+    - Second Constructor
+    - Second Render
+
+    - First ComponentDidMount
+    - Second ComponentDidMount
+    
+  - Parent ComponentDidMount
+
+
+ */
 
 // const About = () => {
 //   return (

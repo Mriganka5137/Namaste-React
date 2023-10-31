@@ -109,8 +109,23 @@
 
 ### Class Based Components
 
-1.  Lifecycle of a Class Based Component
+1.  Lifecycle Methods of a Class Based Component
 
     - Constructor
     - Render
     - ComponentDidMount --- Make API Calls
+
+### Lifecycle Methods of a React Component
+
+1.  Parent Constructor
+2.  Parent Render
+    2.1. First Constructor
+    2.2. First Render
+
+        2.3. Second Constructor
+        2.4. Second Render
+
+        2.5. First ComponentDidMount
+        2.6. Second ComponentDidMount
+
+3.  Parent ComponentDidMount

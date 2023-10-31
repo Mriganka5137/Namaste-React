@@ -2,18 +2,18 @@ import React from "react";
 class UserCardClass extends React.Component {
   constructor(props) {
     super(props);
-    console.log("Child Constructor");
     this.state = {
       count: 0,
     };
+    console.log(this.props.name + "Child Constructor");
   }
 
   componentDidMount() {
-    console.log("Child Component did Mount ");
+    console.log(this.props.name + "Child Component did Mount ");
   }
 
   render() {
-    console.log("Child Render");
+    console.log(this.props.name + "Child Render");
     const { name, location } = this.props;
     const { count } = this.state;
     return (
