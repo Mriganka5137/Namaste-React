@@ -5,27 +5,20 @@ class UserCardClass extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      userInfo: {
-        name: "Dummy",
-        location: "abc",
-        avatar_url: "",
-        bio: "xyz",
-        twitter_username: "xyz",
-        followers: 0,
-        following: 0,
-        public_repos: 0,
-      },
+      userInfo: githubData,
     };
   }
 
   async componentDidMount() {
     // const res = await fetch("https://api.github.com/users/Mriganka5137");
-
     // const data = await res.json();
+    // this.setState({
+    //   userInfo: data,
+    // });
+  }
 
-    this.setState({
-      userInfo: githubData,
-    });
+  componentDidUpdate() {
+    console.log("Component did update");
   }
 
   render() {
@@ -42,14 +35,19 @@ class UserCardClass extends React.Component {
     return (
       <Link
         to="https://github.com/Mriganka5137/"
-        className="flex justify-between max-w-xl px-10 py-8 mt-5 border border-green-100 rounded-lg shadow-md hover:shadow-lg"
+        className="flex justify-between max-w-xl gap-5 px-10 py-8 mt-5 border border-green-200 rounded-lg shadow-md hover:shadow-lg max-sm:flex-col-reverse"
       >
         <div>
           <h2 className="text-xl font-semibold text-gray-600 ">{name}</h2>
           <h3 className="text-sm text-gray-400">Location : {location}</h3>
-          <h2 className="mt-5 text-gray-500">twitter: {twitter_username}</h2>
+          <Link
+            to="https://twitter.com/_Mriganka_"
+            className="mt-5 text-sm text-blue-900"
+          >
+            twitter: {twitter_username}
+          </Link>
           <p className="max-w-md mt-2 text-xs text-gray-400">{bio}</p>
-          <div className="flex gap-5 mt-5 font-semibold text-gray-500">
+          <div className="flex gap-5 mt-5 font-semibold text-gray-500 max-sm:text-sm max-sm:flex-col">
             <p>{followers} followers</p>
             <p>{following} following</p>
             <p>{public_repos} repos</p>

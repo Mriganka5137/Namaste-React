@@ -129,3 +129,16 @@
 7.  First child ComponentDidMount
 8.  Second child ComponentDidMount
 9.  Parent ComponentDidMount
+
+### ComponentDidMount
+
+- ComponentDidMount is called after the component is rendered for the first time.
+- It is called only once after the initial render.
+
+### ComponentDidUpdate
+
+- ComponentDidUpdate is called after the component is rendered for the first time and after every render where the value of the dependency array changes.
+
+### ComponentWillUnmount
+
+- ComponentWillUnmount is called before the component is removed from the DOM.
