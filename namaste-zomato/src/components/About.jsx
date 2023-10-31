@@ -1,4 +1,4 @@
-import UserCard from "./UserCard";
+// import UserCard from "./UserCard";
 import UserCardClass from "./UserCardClass";
 import React from "react";
 
@@ -18,9 +18,8 @@ class About extends React.Component {
       <div className="px-10 py-5 pt-36">
         <h1 className="mb-3 text-2xl font-semibold">About us</h1>
         <hr />
-        <UserCard />
-        <UserCardClass name="First" location="Khumtai, Golghat" />
-        <UserCardClass name="Second" location="Khumtai, Golghat" />
+        {/* <UserCard /> */}
+        <UserCardClass />
       </div>
     );
   }

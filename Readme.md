@@ -119,13 +119,13 @@
 
 1.  Parent Constructor
 2.  Parent Render
-    2.1. First Constructor
-    2.2. First Render
+3.  First child Constructor
+4.  First child Render
+5.  Second child Constructor
+6.  Second child Render
 
-        2.3. Second Constructor
-        2.4. Second Render
+- DOM UPDATED HERE(in single batch)
 
-        2.5. First ComponentDidMount
-        2.6. Second ComponentDidMount
-
-3.  Parent ComponentDidMount
+7.  First child ComponentDidMount
+8.  Second child ComponentDidMount
+9.  Parent ComponentDidMount
