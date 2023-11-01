@@ -1,52 +1,13 @@
 import RestaurantCard from "./RestaurantCard";
-// import resList from "../utils/mockdata";
-import { useEffect, useState } from "react";
 import Shimmer from "./Shimmer";
+import useRestaurants from "../hooks/useRestaurants";
+import { useState } from "react";
 
 const Body = () => {
-  // Optional Chaining
-  const [restaurants, setRestaurants] = useState([]);
-  const [filteredRestaurant, setFilteredRestaurant] = useState([]);
+  const { restaurants, filteredRestaurants, setFilteredRestaurants } =
+    useRestaurants();
   const [searchText, setSearchText] = useState("");
-
-  const fourStar = restaurants.filter((res) => res?.info?.avgRating > 4);
-
-  useEffect(() => {
-    // console.log("Inside effect");
-    fetchRestaurant();
-  }, []);
-
-  // Fetch Restaurant function
-  const fetchRestaurant = async () => {
-    const res = await fetch(
-      "https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9715987&lng=77.5945627&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
-    );
-    // const res = await fetch(
-    //   "https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9351929&lng=77.62448069999999&page_type=DESKTOP_WEB_LISTING"
-    // );
-
-    const data = await res.json();
-
-    // console.log(data);
-    let restaurantsData =
-      data?.data?.cards[3].card?.card?.gridElements?.infoWithStyle?.restaurants;
-    // console.log(restaurantsData);
-
-    if (restaurantsData === undefined) {
-      restaurantsData =
-        data?.data?.cards[2].card?.card?.gridElements?.infoWithStyle
-          ?.restaurants;
-    }
-    // console.log(restaurantsData);
-
-    setRestaurants(restaurantsData);
-    setFilteredRestaurant(restaurantsData);
-  };
-
-  // const handleFilter = () => {
-  //   setRestaurants(filteredRestaurants);
-  // };
-  // console.log(filteredRestaurant);
+  const fourStar = restaurants?.filter((res) => res?.info?.avgRating > 4);
 
   return (
     <div className="flex flex-col justify-start max-w-[1440px] px-10 py-5 max-sm:px-2 mx-auto pt-36">
@@ -70,8 +31,7 @@ const Body = () => {
                 res.info.name.toLowerCase().includes(searchText.toLowerCase())
               );
 
-              // setRestaurants(searchRestaurants);
-              setFilteredRestaurant(searchRestaurants);
+              setFilteredRestaurants(searchRestaurants);
             }}
           >
             Search
@@ -79,7 +39,7 @@ const Body = () => {
           <button
             className="px-4 py-2 text-gray-400 uppercase border rounded-lg bg-slate-50"
             onClick={() => {
-              setFilteredRestaurant(fourStar);
+              setFilteredRestaurants(fourStar);
             }}
           >
             Filter
@@ -87,7 +47,7 @@ const Body = () => {
         </div>
       </div>
 
-      {restaurants?.length === 0 ? (
+      {!restaurants ? (
         <div className="flex flex-wrap items-center justify-center gap-10 max-sm:flex-col max-sm:items-center">
           <Shimmer />
           <Shimmer />
@@ -99,7 +59,7 @@ const Body = () => {
         </div>
       ) : (
         <div className="flex flex-wrap items-center justify-center gap-10 max-sm:flex-col max-sm:items-center">
-          {filteredRestaurant?.map((restaurant) => (
+          {filteredRestaurants?.map((restaurant) => (
             <RestaurantCard
               resData={restaurant?.info}
               key={restaurant.info.name}
