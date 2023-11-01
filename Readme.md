@@ -142,3 +142,11 @@
 ### ComponentWillUnmount
 
 - ComponentWillUnmount is called before the component is removed from the DOM.
+
+### Dynamic Bundling
+
+- Chunking
+- Code Splitting
+- Lazy Loading
+
+- Used to reduce the size of the bundle.js file

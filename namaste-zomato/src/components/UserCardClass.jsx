@@ -35,7 +35,7 @@ class UserCardClass extends React.Component {
     return (
       <Link
         to="https://github.com/Mriganka5137/"
-        className="flex justify-between max-w-xl gap-5 px-10 py-8 mt-5 border border-green-200 rounded-lg shadow-md hover:shadow-lg max-sm:flex-col-reverse"
+        className="flex justify-between max-w-xl gap-5 px-10 py-8 mt-5 border rounded-lg shadow-md hover:shadow-lg max-sm:flex-col-reverse"
       >
         <div>
           <h2 className="text-xl font-semibold text-gray-600 ">{name}</h2>

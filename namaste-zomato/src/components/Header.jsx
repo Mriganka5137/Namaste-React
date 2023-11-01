@@ -12,7 +12,10 @@ const Header = () => {
         <p className="text-xl font-bold text-slate-800">Namaste Swiggy</p>
       </NavLink>
 
-      <ul className="flex items-center gap-10 text-sm font-semibold text-gray-400 uppercase max-sm:hidden">
+      <ul className="flex items-center gap-10 text-sm font-semibold text-green-800 uppercase max-sm:hidden">
+        <li>
+          <NavLink to="/grocery">Grocery</NavLink>
+        </li>
         <li>
           <NavLink to="/about">About us</NavLink>
         </li>
@@ -24,7 +27,7 @@ const Header = () => {
         </li>
 
         <button
-          className="px-5 py-2 font-semibold uppercase rounded-lg text-slate-600 bg-slate-300 max-lg:hidden"
+          className="px-5 py-2 font-semibold uppercase bg-green-600 rounded-lg text-slate-100 max-lg:hidden hover:bg-green-500"
           onClick={() => {
             if (btnName === "Login") {
               setBtnName("Logout");
