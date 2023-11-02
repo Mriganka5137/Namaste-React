@@ -9,7 +9,7 @@ const RestaurantCard = ({ resData }) => {
   return (
     <Link
       to={`/restaurant/${id}`}
-      className="max-md:w-full max-md:justify-center w-[250px] flex flex-col  p-5 mt-10 transition-all rounded-lg shadow-md cursor-pointer  hover:shadow-xl ease-in-out border"
+      className="max-md:w-full max-md:justify-center w-[250px] flex flex-col  p-5 mt-10 transition-all rounded-lg shadow-md cursor-pointer  hover:shadow-xl ease-in-out  "
     >
       <div>
         <div className=" p-1 max-h-[200px]">

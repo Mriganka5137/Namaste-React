@@ -41,7 +41,7 @@ const RestaurantMenu = () => {
   }
   // console.log(data);
   return (
-    <div className="px-10 py-5 pt-36 max-w-[1440px] mx-auto max-sm:p-3">
+    <div className="px-10 py-5 pt-36 max-w-[1440px] mx-auto max-sm:p-3 ">
       <div>
         <h1 className="text-2xl font-bold">{name}</h1>
         <p className="mt-2 text-sm font-light text-gray-500">
