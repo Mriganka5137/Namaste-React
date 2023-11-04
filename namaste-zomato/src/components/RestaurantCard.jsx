@@ -1,3 +1,5 @@
+/* eslint-disable react/prop-types */
+/* eslint-disable react/display-name */
 import { Link } from "react-router-dom";
 import { CDN_URL } from "../utils/constants";
 
@@ -38,10 +40,22 @@ const RestaurantCard = ({ resData }) => {
           <button className="px-2 py-1 mt-4 text-sm text-center ease-in-out bg-yellow-600 rounded-lg text-yellow-50 hover:bg-yellow-500">
             Order
           </button>
+          {/* <h2 className="">Explore</h2> */}
         </div>
       </div>
     </Link>
   );
 };
+
+// export const withPrometedLabel = (RestaurantCard) => {
+//   return (props) => {
+//     return (
+//       <div>
+//         <label>Promoted</label>
+//         <RestaurantCard {...props} />
+//       </div>
+//     );
+//   };
+// };
 
 export default RestaurantCard;
