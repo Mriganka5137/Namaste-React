@@ -1,12 +1,14 @@
 import { Outlet } from "react-router-dom";
-import Body from "./components/Body";
 import Header from "./components/Header";
-
+import { Provider } from "react-redux";
+import { store } from "./app/store";
 function App() {
   return (
     <>
-      <Header />
-      <Outlet />
+      <Provider store={store}>
+        <Header />
+        <Outlet />
+      </Provider>
     </>
   );
 }

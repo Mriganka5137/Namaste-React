@@ -3,8 +3,6 @@
 import ItemCard from "./ItemCard";
 
 const RestaurantCategory = ({ data, showAccordion, setShowIndex }) => {
-  console.log(data);
-
   return (
     <div className="mb-10 border-b border-yellow-200">
       <div

@@ -8,7 +8,6 @@ const Body = () => {
     useRestaurants();
   const [searchText, setSearchText] = useState("");
   const fourStar = restaurants?.filter((res) => res?.info?.avgRating > 4);
-  console.log(restaurants);
 
   // const RestaurantcardPromoted = withPrometedLabel(RestaurantCard);
 

@@ -150,3 +150,17 @@
 - Lazy Loading
 
 - Used to reduce the size of the bundle.js file
+
+### REDUX
+
+- When we click on a button, we dispatch an action. The action is dispatched to the reducer. The reducer updates the state. This updates the slice of the redux store . The state is passed to the component. The component is re-rendered.
+
+- Install @reduxjs/toolkit and react-redux
+- Create a store using configureStore
+- Connect the store to the app using Provider
+- Create a slice using createSlice
+- Add the slice to the store using configureStore
+- Use the slice in the component using useSelector and useDispatch
+- useSelector is used to get the state from the store
+- useDispatch is used to dispatch an action to the store
+- useSelector and useDispatch are hooks
