@@ -177,3 +177,11 @@
 2. Install jest
 3. Install babel dependencies
 4. Configure babel.config.js
+
+### Test Case file Convention
+
+- test.js
+- test.jsx
+- spec.js
+- spec.jsx
+- \_\_ = dunder = double underscore
