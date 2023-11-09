@@ -164,3 +164,16 @@
 - useSelector is used to get the state from the store
 - useDispatch is used to dispatch an action to the store
 - useSelector and useDispatch are hooks
+
+### Testing
+
+- Unit Testing
+- Integration Testing
+- End to End Testing
+
+### Setting up Testing
+
+1. Install react-testing-library
+2. Install jest
+3. Install babel dependencies
+4. Configure babel.config.js
