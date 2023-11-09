@@ -47,9 +47,9 @@ const RestaurantCategory = ({ data, showAccordion, setShowIndex }) => {
         )}
       </div>
       {showAccordion && (
-        <ul className="flex flex-col gap-10 ">
+        <ul className="flex flex-col gap-2 ">
           {data.itemCards.map((item) => (
-            <ItemCard key={item.card.info.name} item={item} />
+            <ItemCard key={item.card.info.name} item={item} type="" />
           ))}
         </ul>
       )}

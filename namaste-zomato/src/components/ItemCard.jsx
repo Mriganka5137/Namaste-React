@@ -2,7 +2,7 @@ import { useDispatch } from "react-redux";
 import { CDN_URL } from "../utils/constants";
 import { addItem } from "../features/cart/cartSlice";
 
-const ItemCard = ({ item }) => {
+const ItemCard = ({ item, type }) => {
   const dispatch = useDispatch();
   const {
     name,
@@ -18,7 +18,7 @@ const ItemCard = ({ item }) => {
   };
 
   return (
-    <div className="flex items-center justify-between gap-3 p-5 border border-gray-100 rounded-lg shadow-sm max-sm:flex-col-reverse max-sm:p-2 hover:shadow-lg">
+    <div className="flex items-center justify-between gap-3 p-5 border border-green-100 rounded-lg shadow-sm max-sm:flex-col-reverse max-sm:p-2 hover:shadow-lg">
       <div className=" max-w-1/2">
         <p className="font-bold text-gray-500 text-md">{name}</p>
         <p className="font-medium text-[14px] text-gray-700">₹{price / 100}</p>
@@ -26,12 +26,14 @@ const ItemCard = ({ item }) => {
         <p className="font-light text-[12px] text-gray-400 mt-5">
           {description}
         </p>
-        <button
-          className=" text-sm rounded-lg px-3 py-1.5 bg-yellow-600 font-medium mt-5 text-gray-100"
-          onClick={() => handleAddToCart(item)}
-        >
-          Add to Cart
-        </button>
+        {type != "cart" && (
+          <button
+            className=" text-sm rounded-lg px-3 py-1.5 bg-yellow-600 font-medium mt-5 text-gray-100"
+            onClick={() => handleAddToCart(item)}
+          >
+            Add to Cart
+          </button>
+        )}
       </div>
       <div className="flex items-center max-w-[200px] max-sm:w-full">
         <img
